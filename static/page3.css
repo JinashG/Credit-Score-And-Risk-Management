@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FFF;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  --c1:#C1262C;
+  --c2:#DB5C23;
+  --c3:#F69220;
+  --c4:#8BA247;
+  --c5:#23B473;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.main{
+  height: 80rem;
+  padding: 20px 50px;
+  border-radius: 0.1875rem;
+  background: linear-gradient(251deg, #66BE93 0%, #3C546C 99.54%);
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  margin-top: 5px;
+  background-color: transparent;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 3rem;
+  height: 3.14806rem;
+  padding: 0.91663rem;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 1px 10px;
+  margin: 2px 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.09994rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50% -50%);
+  width: 0;
+  height: 2.5px;
+  background-color: #FFF;
+  transition: width 0.3s ease-in-out, left 0.4s ease-in-out;
+}
+
+a:hover::before {
+  width: 80%;
+  left: 10%;
+}
+
+
+.btn {
+  background-color: transparent;
+  display: inline-flex;
+  height: 3.525rem;
+  padding: 0.75rem 2.1875rem;
+  margin-left: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  border: 3px solid #FFF;
+  color: #FFF;
+  font-size: 1.09994rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: transform 0.2s ease-in;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+}
+
+
+.content{
+  width: 100%;
+  height: auto;
+  margin-top: 4.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 5rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.content h1{
+  color: #FFF;
+  font-size: 1.99113rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.content-box{
+  width: 74.8125rem;
+  height: 52.875rem;
+  margin-top: 5%;
+  padding: 8%;
+  flex-shrink: 0;
+  border-radius: 3.4375rem;
+  background: #FFF;
+  box-shadow: 5px 11px 4px 0px #3F5C6F;
+  position: relative;
+}
+
+.sd{
+  /* background-color: #23B473; */
+  width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  flex-direction: column;
+    .speedometer{
+      width: 500px;
+      height: 500px;
+      padding: 100px;
+      border-radius: 50%;
+      background: 
+        radial-gradient(#ffff 0 0) content-box,
+        conic-gradient(
+          from -90deg,
+          var(--c1) 36deg,
+          var(--c2) 0 72deg,
+          var(--c3) 0 108deg,
+          var(--c4) 0 144deg,
+          var(--c5) 0 180deg,
+          #0000 0
+        );
+
+        position: relative;
+
+        .needle{
+          --score:20;
+          position: absolute;
+          width: 380px;
+          height: 380px;
+          padding: 150px;
+          left: 50%;
+          right: 50%;
+          z-index: 2;
+          translate: -50% -15%;
+          /* translate: -50% -50%; */
+          border-radius: 50%;
+          background: 
+          conic-gradient(
+            from 175deg at 50% 55%,
+            #ccc 2deg,
+            #ea1c98 3deg 7deg,
+            #ccc 8deg 10deg,
+            #0000 0
+          ) 0 -217px no-repeat,
+          radial-gradient(
+            #ea1c98 0 50%,
+            #ccc 51%
+          ) content-box;
+          transform: rotate(var(--rotate, calc(cos(var(--score) * 180deg/100) * -90deg)));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.5s ease-out; /* Added animation transition */
+
+          .score{
+            transform: rotate(calc(cos(var(--score) * 180deg/100) * 90deg));             
+            font-size: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 800;
+            color: #eee;
+          }
+        }
+    }
+}
+      input {
+          width: 16.16531rem;
+          height: 2.375rem;
+          padding: 10px;
+          flex-shrink: 0;
+          border-radius: 0.76613rem;
+          border: 1px solid #000;
+          background: #FFF;
+          color: #000;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+      }
+
+      .inputs{
+          width: 45%;
+          /* background-color: #23B473; */
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+      }
+
+      .inputs button{
+          display: flex;
+      width: 8.625rem;
+      padding: 0.325rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      border-radius: 1.625rem;
+      border: none;
+      background: #66BE93;
+      color: #3C546C;
+      font-size: 1.67431rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      }
+
+      .sd h1{
+          /* background-color: #3C546C; */
+          color: black;
+          font-size: 1.99113rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          position: absolute;
+          bottom: 15%;
+          /* z-index: 1; */
+      }
+
+      .Heading{
+        --rotation:0;
+        position: absolute;
+        left: 0%;
+        top:8%;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: red; */
+        text-align: center;
+        /* font-size: 8px; */
+        transform: rotate(var(--rotation));
+      }
+
+
+      #h1{--rotation: 30deg;
+        font-size: 23px;  
+      }
+      #h2{--rotation: 60deg; 
+        font-size: 23px;
+      }
+      #h3{--rotation: 0deg;
+        font-size: 23px;
+      }
+      #h4{--rotation: 300deg;
+        font-size: 23px;
+      }
+      #h5{--rotation: 330deg;
+        font-size: 23px;
+      }

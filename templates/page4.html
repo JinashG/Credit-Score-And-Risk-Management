@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Score</title>
+    <link rel="stylesheet" href="static/page4.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <nav>
+                <a href="{{ url_for('index') }}">HOME</a>
+                <a href="{{ url_for('page2') }}">SCORE</a>
+                <a href="{{ url_for('page3') }}">CLASSIFICATION</a>
+                <a href="{{ url_for('page4') }}">LOAN PREDICATION</a>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>LOAN PREDICTION</h1>
+            <div class="content-box">
+                <div class="form">
+                    <form action="{{ url_for('predict') }}" method="post" class="form" id="prForm">
+                        <div class="box">
+                            <div class="line">
+                                <label for="Gender" class="radio">Gender:</label>
+                                <select class="input dropdown-content" id="Gender" name="gender" required>
+                                    <option class="dropdown-content" selected>Select</option>
+                                    <option class="dropdown-content" value="Male">Male</option>
+                                    <option class="dropdown-content" value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="line">
+                                <label for="Age" class="radio">Age:</label>
+                                <input type="number" class="input" placeholder="Enter your age"
+                                        id="Age" name="age" required>
+                            </div>
+                            <div class="line">
+                                <label for="Income" class="radio">Income (biweekly) (between 0 and 458874.34):</label>
+                                <input type="number" class="input" placeholder="Enter Requested Loan Amount"
+                                    id="Income" name="income" min="0" max="458874.34" required>
+                            </div>
+                            <div class="line">
+                            <label for="Dependents" class="radio">Dependents:</label>
+                            <input type="number" class="input" placeholder="Enter Number of Dependents"
+                                    id="Dependents" name="dependents_count" min="0" max="4" required>
+                            </div>
+                            <div class="line">
+                                <label for="Education" class="radio">Choose your Education:</label>
+                                <select class="input dropdown-content" id="Education" name="grad" required>
+                                    <option class="dropdown-content" selected>Select</option>
+                                    <option class="dropdown-content" value="Graduated">Graduated</option>
+                                    <option class="dropdown-content" value="Non-Graduated">Non-Graduated</option>
+                                </select>
+                            </div>
+                            <div class="line">
+                                <label for="Income_stability" class="radio">Income Stability:</label>
+                                <select class="input dropdown-content" id="Income_stability" name="income_stability" required>
+                                    <option class="dropdown-content" selected>Select</option>
+                                    <option class="dropdown-content" value="High">High</option>
+                                    <option class="dropdown-content" value="Low">Low</option>
+                                </select>
+                            </div>
+                            <div class="line">
+                                <label for="Employement" class="radio">Self Employed:</label>
+                                <select class="input dropdown-content" id="Employement" name="self_emp" required>
+                                    <option class="dropdown-content" selected>Select</option>
+                                    <option class="dropdown-content" value="Yes">YES</option>
+                                    <option class="dropdown-content" value="No">NO</option>
+                                </select>
+                            </div>
+                            <div class="line">
+                                <label for="Loan Amount" class="radio">Loan Amount Request:</label>
+                                <input type="number" class="input" placeholder="Enter Requested Loan Amount"
+                                    id="Loan Amount" name="loan_amount_req" required>
+                            </div>
+                            <div class="line">
+                                <label for="Duration" class="radio">Loan Duration:</label>
+                                <input type="number" class="input" placeholder="Duration" id="Duration" name="Loan_Dur">
+                            </div>
+                            <div class="line">
+                                <label for="Credit Score" class="radio">Credit Score:</label>
+                                <input type="number" class="input" placeholder="Enter Credit Score" id="Credit Score" name="credit_score">
+                            </div>
+                            <div class="line">
+                                <label for="assets" class="radio">Total Assets:</label>
+                                <input type="number" class="input" placeholder="Enter your total assets" id="assets" name="Assets">
+                            </div>
+                        </div>
+                        <div class="line">
+                            <label for="Profession" class="radio">Profession:</label>
+                            <select id="Profession" name="profession" class="input dropdown-content" required>
+                                <option class="dropdown-content" selected>Select</option>
+                                <option value="Working">Working</option>
+                                <option value="Commercial associate">Commercial Associate</option>
+                                <option value="Pensioner">Pensioner</option>
+                                <option value="State servant">State Servant</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="Location" class="radio">Residence Location:</label>
+                            <select id="Location" name="location" class="input dropdown-content" required>
+                                <option class="dropdown-content" selected>Select</option>
+                                <option value="Semi-Urban">Semi-Urban</option>
+                                <option value="Rural">Rural</option>
+                                <option value="Urban">Urban</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="Loan Expenses" class="radio">Current Loan Expenses (between 0 and 83430):</label>
+                            <input type="number" class="input" placeholder="Enter Current Loan Expenses"
+                                id="Loan Expenses" name="current_loan_amt" min="0" max="83430" required>
+                        </div>
+                        <div class="line">
+                            <label for="loan_default_input" class="radio">Loan Default:</label>
+                            <div class="radio-box">
+                                <input type="radio" class="radio-circle" id="Yes" value="Yes" name="loan_default_input" selected required>
+                                <label class="radio" for="Yes">YES</label>
+                                <input type="radio" class="radio-circle" id="No" value="No" name="loan_default_input" required>
+                                <label class="radio" for="No">NO</label>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <label for="Active Credit" class="radio">Credit Card Status:</label>
+                            <select class="input dropdown-content" id="Active Credit" name="cc_status" required>
+                                <option class="dropdown-content" selected>Select</option>
+                                <option class="dropdown-content" value="Active">Active</option>
+                                <option class="dropdown-content" value="Inactive">Inactive</option>
+                                <option class="dropdown-content" value="Unpossessed">Unpossessed</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="Property_age" class="radio">Property Age (between 1 and 14):</label>
+                            <input type="number" id="Property_age" class="input" name="property_age" min="1" max="14" required>
+                        </div>
+                        <div class="line">
+                            <label for="Property Price" class="radio">Property Price (between 0 and 2,96,17,650):</label>
+                            <input type="number" class="input" id="Property Price" name="prop_price" min="0" max="2,96,17,650" required>
+                        </div>
+                        <div class="line">
+                            <label for="Property Location" class="radio">Property Location :</label>
+                            <select class="input dropdown-content" id="Property Location" name="prop_location">
+                                <option class="dropdown-content" selected>Select</option>
+                                <option class="dropdown-content" value="Semi-Urban">Semi-Urban</option>
+                                <option class="dropdown-content" value="Rural">Rural</option>
+                                <option class="dropdown-content" value="Urban">Urban</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="Co-Applicant" class="radio">Co-Applicant:</label>
+                            <div class="radio-box">
+                                <input type="radio" class="radio-circle" id="cYES" value="Yes" name="co_applicant_input">
+                                <label class="radio" for="cYES">YES</label>
+                                <input type="radio" class="radio-circle" id="cNO" value="No" name="co_applicant_input">
+                                <label class="radio" for="cNO">NO</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="btn">
+                        <button class="calculate-btn" onclick="predictForm()">PREDICT</button>
+                        <script>
+                            function predictForm() {
+                                // Get the form element
+                                var form = document.getElementById("prForm");
+                                // Submit the form
+                                form.submit();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="text">
+                <h2>{{loan}}</h2>
+                <h2>Approved Amount:{{pre}}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

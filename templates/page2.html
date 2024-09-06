@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>credit Score Calculation</title>
+    <link rel="stylesheet" href="static/page2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <nav>
+                <a href="{{ url_for('index') }}">HOME</a>
+                <a href="{{ url_for('page2') }}"> SCORE</a>
+                <a href="{{ url_for('page3') }}">CLASSIFICATION</a>
+                <a href="{{ url_for('page4') }}">LOAN PREDICATION</a>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>CREDIT SCORE CALCULATION</h1>
+            <div class="content-box">
+                <div class="form">
+                    <form action="{{ url_for('submit') }}" method="post" class="form" id="myForm">
+                        <div class="line">
+                            <label for="Accounts">Number of Credit Accounts:</label>
+                            <input type="number" class="input" placeholder="Total credit accounts" id="Accounts" name="acc">
+                        </div>
+                        <div class="line">
+                            <label for="Education">Education Level:</label>
+                            <select class="input dropdown-content"  id="Education" name="edu">
+                                <option class="dropdown-content" value="0" disabled selected>Select</option>
+                                <option class="dropdown-content" value="1">High School</option>
+                                <option class="dropdown-content" value="2">Bachelor</option>
+                                <option class="dropdown-content" value="3">Master</option>
+                                <option class="dropdown-content" value="4">PhD</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="Employment">Employment Status:</label>
+                            <select class="input dropdown-content"  id="Employment" name="employment">
+                                <option class="dropdown-content" value="0" disabled selected>Select</option>
+                                <option class="dropdown-content" value="1">Unemployed</option>
+                                <option class="dropdown-content" value="2">Employed</option>
+                                <option class="dropdown-content" value="3">Self-Employed</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <label for="History">Payment history:</label>
+                            <input type="number" class="input" placeholder="Payment history" id="History" name="his">
+                        </div>
+                        <div class="line">
+                            <label for="Balance">Total credit card balance:</label>
+                            <input type="number" class="input" placeholder="credit card balance" id="Balance" name="bal">
+                        </div>
+                        <div class="line">
+                            <label for="limitvalue">Total Credit Card Limits:</label>
+                            <input type="number" class="input" placeholder="credit card limit" id="limitvalue" name="limit">
+                        </div>
+                    </form>
+                </div>
+                <button class="calculate-btn" onclick="submitForm()">CALCULATE</button>
+                <script>
+                    function submitForm() {
+                        // Get the form element
+                        var form = document.getElementById("myForm");
+                        // Submit the form
+                        form.submit();
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="text">
+                <h1>YOUR SCORE</h1>
+                <h1 class="score">{{value}}</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

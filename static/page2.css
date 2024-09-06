@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #FFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.placeholder {
+    color: #757575;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.main {
+    height: 55rem;
+    padding: 20px 50px;
+    border-radius: 0.1875rem;
+    background: linear-gradient(251deg, #66BE93 0%, #3C546C 99.54%);
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 3rem;
+    height: 3.14806rem;
+    padding: 0.91663rem;
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 1px 10px;
+    margin: 2px 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.09994rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50% -50%);
+    width: 0;
+    height: 2.5px;
+    background-color: #FFF;
+    transition: width 0.3s ease-in-out, left 0.4s ease-in-out;
+}
+
+a:hover::before {
+    width: 80%;
+    left: 10%;
+}
+
+
+.btn {
+    background-color: transparent;
+    display: inline-flex;
+    height: 3.525rem;
+    padding: 0.75rem 2.1875rem;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 3px solid #FFF;
+    color: #FFF;
+    font-size: 1.09994rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: transform 0.2s ease-in;
+}
+
+.btn:hover {
+    transform: scale(1.15);
+}
+
+
+.content {
+    width: 100%;
+    height: 74rem;
+    margin-top: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 5rem;
+    position: absolute;
+    z-index: 1;
+}
+
+.content h1 {
+    color: #FFF;
+    font-size: 1.99113rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.content-box {
+    width: 74.8125rem;
+    height: 50.25rem;
+    margin-top: 5%;
+    padding: 8%;
+    flex-shrink: 0;
+    border-radius: 3.4375rem;
+    background: #FFF;
+    box-shadow: 5px 11px 4px 0px #3F5C6F;
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    height: 50rem;
+    background: #FFF;
+}
+
+
+.line {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    color: #000;
+    font-size: 1.67431rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.input {
+    width: 16.16531rem;
+    height: 2.575rem;
+    padding: 10px;
+    flex-shrink: 0;
+    border-radius: 0.76613rem;
+    border: 1px solid #000;
+    background: #FFF;
+    color: #000;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .text h1 {
+    color: #000;
+    font-size: 3.03119rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: normal;
+    padding: 2rem;
+}
+
+
+.calculate-btn {
+    width: 10.625rem;
+    padding: 0.625rem;
+    margin-top: 3rem;
+    gap: 0.625rem;
+    border-radius: 1.625rem;
+    border: none;
+    background: #66BE93;
+    color: #3C546C;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    transition: transform 0.2s ease-in;
+}
+
+.calculate-btn:hover {
+    transform: scale(1.15);
+}
+
+.dropdown-content {
+    padding: 5px;
+}
+
+
+
+/* Style links inside the dropdown */
+.dropdown-content option {
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: block;
+}

@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+      --c1:#C1262C;
+      --c2:#DB5C23;
+      --c3:#F69220;
+      --c4:#8BA247;
+      --c5:#23B473;
+    }
+
+    body{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .speedometer{
+        width: 500px;
+        height: 500px;
+        padding: 100px;
+        border-radius: 50%;
+        background: 
+          radial-gradient(#ffff 0 0) content-box,
+          conic-gradient(
+            from -90deg,
+            var(--c1) 36deg,
+            var(--c2) 0 72deg,
+            var(--c3) 0 108deg,
+            var(--c4) 0 144deg,
+            var(--c5) 0 180deg,
+            #0000 0
+          );
+
+          position: relative;
+
+          .needle{
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            padding: 150px;
+            left: 50%;
+            right: 50%;
+            /* translate: -50% -3.5%; */
+            translate: -50% -50%;
+            border-radius: 50%;
+            background: 
+            conic-gradient(
+              from 175deg at 50% 55%,
+              #ccc 2deg,
+              #ea1c98 3deg 7deg,
+              #ccc 8deg 10deg
+              #0000 0
+            ) 0 -217px no-repeat,
+            radial-gradient(
+              #ea1c98 0 50%,
+              #ccc 51%
+            ) content-box;
+            rotate: calc(cos(var(--score) * 180deg/100) * -90deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .score{
+              rotate: calc(cos(var(--score) * 180deg/100) * 90deg);
+              font-size: 18px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-weight: 800;
+              color: #eee;
+            }
+          }
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="speedometer">
+    <div class="needle" style="--score:20">
+      <span class="score">20</span>
+    </div>
+  </div>
+
+  <script>
+       document.addEventListener("DOMContentLoaded", function() {
+      // Select the needle element
+      var needle = document.querySelector(".needle");
+
+      // Set the --score custom property to 80
+      needle.style.setProperty("--score", "50");
+    });
+  </script>
+</body>
+</html>

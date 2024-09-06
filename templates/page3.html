@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit_classification</title>
+    <link rel="stylesheet" href="static/page3.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <nav>
+                <a href="{{ url_for('index') }}">HOME</a>
+                <a href="{{ url_for('page2') }}">SCORE</a>
+                <a href="{{ url_for('page3') }}">CLASSIFICATION</a>
+                <a href="{{ url_for('page4') }}">LOAN PREDICATION</a>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>CREDIT CLASSIFICATION</h1>
+            <div class="content-box">
+                    <form action="#" class="inputs">
+                        <input id="id" type="number" placeholder="Enter the credit score (250-900)">
+                        <button type="button" onclick="getValue()">Get</button>
+                    </form>
+                <div class="sd">
+                    <div class="speedometer">
+                        <div class="needle" style="--score:0">
+                            <span class="score">0</span>
+                        </div>
+                        <h1 class="Heading" id="h1">Very Good</h1>
+                        <h1 class="Heading" id="h2">Excellent</h1>
+                        <h1 class="Heading" id="h3">Good</h1>
+                        <h1 class="Heading" id="h4">Poor</h1>
+                        <h1 class="Heading" id="h5">Fair</h1>
+                    </div>
+                    <h1>CREDIT SCORE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/page3.js"></script>
+</body>
+
+</html>
